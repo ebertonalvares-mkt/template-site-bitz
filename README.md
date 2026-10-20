@@ -129,6 +129,29 @@ Nele você altera:
 
 ---
 
+## 👑 Como Publicar na KingHost (Publicação via Git)
+
+A hospedagem tradicional da KingHost não roda comandos como `npm run build` durante a clonagem. Por isso, preparamos uma branch dedicada chamada **`deploy`** que já contém o site 100% compilado em HTML/CSS/JS estático com `.htaccess` configurado.
+
+### Passo a passo no Painel da KingHost:
+1. Acesse o **Painel de Controle da KingHost**.
+2. Clique na ferramenta **Publicação via Git** (Git Webhook).
+3. Conecte sua conta do GitHub e selecione o repositório:
+   - **Repositório**: `ebertonalvares-mkt/template-site-bitz`
+   - **Branch**: selecione a branch `deploy` (NÃO selecione a `main`)
+   - **Diretório de publicação**: informe a pasta do site (ex: `/www/`)
+4. Clique em **Publicar / Sincronizar**.
+5. Pronto! O site estático entrará no ar imediatamente com carregamento ultra-rápido e HTTPS.
+
+### Como atualizar o site da KingHost após fazer alterações:
+Sempre que fizer alterações no código do template, basta rodar no terminal:
+```bash
+npm run deploy
+```
+Esse comando faz o build estático e atualiza a branch `deploy` no GitHub. A KingHost sincronizará a nova versão automaticamente!
+
+---
+
 ## ☁️ Como Fazer o Deploy na Vercel
 
 ### Opção 1: Via GitHub / GitLab / Bitbucket (Recomendado)
