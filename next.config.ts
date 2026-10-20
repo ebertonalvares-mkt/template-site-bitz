@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Exportação estática para hospedagens como KingHost */
+  output: "export",
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
